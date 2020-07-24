@@ -17,12 +17,7 @@
         dessertPanel.Visible = False
         aboutPanel.Visible = False
         cartPanel.Visible = False
-
-
-
         movePanel(clickType.FOOD)
-
-
     End Sub
 
     Private Sub drinkButton_Click(sender As Object, e As EventArgs) Handles drinkButton.Click
@@ -48,8 +43,7 @@
     End Sub
 
     Private Sub cartButton_Click(sender As Object, e As EventArgs) Handles cartButton.Click
-        cartPanel.Height = cartButton.Height
-        cartPanel.Top = cartButton.Top
+
         foodPanel.Visible = False
         drinkPanel.Visible = False
         dessertPanel.Visible = False
@@ -59,8 +53,7 @@
     End Sub
 
     Private Sub aboutButton_Click(sender As Object, e As EventArgs) Handles aboutButton.Click
-        aboutPanel.Height = aboutButton.Height
-        aboutPanel.Top = aboutButton.Top
+
         foodPanel.Visible = False
         drinkPanel.Visible = False
         dessertPanel.Visible = False
@@ -139,5 +132,6 @@
                     y = y + 1
                 End While
         End Select
+
     End Function
 End Class
