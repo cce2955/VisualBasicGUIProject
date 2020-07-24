@@ -18,9 +18,9 @@
         aboutPanel.Visible = False
         cartPanel.Visible = False
 
-        selectionPanel.AutoScroll = True
-        clickEnum = clickType.FOOD
-        movePanel(clickEnum)
+
+
+        movePanel(clickType.FOOD)
 
 
     End Sub
@@ -33,8 +33,7 @@
         dessertPanel.Visible = False
         aboutPanel.Visible = False
         cartPanel.Visible = False
-        clickEnum = clickType.DRINK
-        movePanel(clickEnum)
+        movePanel(clickType.DRINK)
     End Sub
 
     Private Sub dessertButton_Click(sender As Object, e As EventArgs) Handles dessertButton.Click
@@ -45,8 +44,7 @@
         dessertPanel.Visible = True
         aboutPanel.Visible = False
         cartPanel.Visible = False
-        clickEnum = clickType.DESSERT
-        movePanel(clickEnum)
+        movePanel(clickType.DESSERT)
     End Sub
 
     Private Sub cartButton_Click(sender As Object, e As EventArgs) Handles cartButton.Click
@@ -57,18 +55,18 @@
         dessertPanel.Visible = False
         aboutPanel.Visible = False
         cartPanel.Visible = True
-        clickEnum = clickType.CART
+        movePanel(clickType.CART)
     End Sub
 
     Private Sub aboutButton_Click(sender As Object, e As EventArgs) Handles aboutButton.Click
         aboutPanel.Height = aboutButton.Height
         aboutPanel.Top = aboutButton.Top
-        foodPanel.Visible = True
+        foodPanel.Visible = False
         drinkPanel.Visible = False
         dessertPanel.Visible = False
-        aboutPanel.Visible = False
+        aboutPanel.Visible = True
         cartPanel.Visible = False
-        clickEnum = clickType.ABOUT
+        movePanel(clickType.ABOUT)
     End Sub
 
     Private Sub closeButton_Click(sender As Object, e As EventArgs) Handles closeButton.Click
@@ -88,16 +86,58 @@
 
     Private Function movePanel(click As clickType)
         selectionPanel.BringToFront()
-        Select Case clickEnum
+        Dim y As Integer
+        y = selectionPanel.Location.Y
+        Select Case click
+            'Could've done this as a returnable method but I'm trying 
+            'to fight time, next week I can refactor this easily
+            'reminder to self about this
             Case clickType.FOOD
-                selectionPanel.SetBounds(0, 84, 16, 42)
+                While (y >= 84)
+                    selectionPanel.SetBounds(0, y, 16, 42)
+                    y = y - 1
+                End While
+                While (y <= 84)
+                    selectionPanel.SetBounds(0, y, 16, 42)
+                    y = y + 1
+                End While
             Case clickType.DRINK
-                selectionPanel.SetBounds(0, 136, 16, 42)
+                While (y >= 136)
+                    selectionPanel.SetBounds(0, y, 16, 42)
+                    y = y - 1
+                End While
+                While (y <= 136)
+                    selectionPanel.SetBounds(0, y, 16, 42)
+                    y = y + 1
+                End While
             Case clickType.DESSERT
-                selectionPanel.SetBounds(1, 1, 16, 42)
+                While (y >= 188)
+                    selectionPanel.SetBounds(0, y, 16, 42)
+                    y = y - 1
+                End While
+                While (y <= 188)
+                    selectionPanel.SetBounds(0, y, 16, 42)
+                    y = y + 1
+                End While
+
+            Case clickType.CART
+                While (y >= 240)
+                    selectionPanel.SetBounds(0, y, 16, 42)
+                    y = y - 1
+                End While
+                While (y <= 240)
+                    selectionPanel.SetBounds(0, y, 16, 42)
+                    y = y + 1
+                End While
+            Case clickType.ABOUT
+                While (y >= 292)
+                    selectionPanel.SetBounds(0, y, 16, 42)
+                    y = y - 1
+                End While
+                While (y <= 292)
+                    selectionPanel.SetBounds(0, y, 16, 42)
+                    y = y + 1
+                End While
         End Select
     End Function
-
-
-
 End Class

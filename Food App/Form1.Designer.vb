@@ -729,7 +729,7 @@ Partial Class mainForm
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(241, 75)
+        Me.Label14.Location = New System.Drawing.Point(275, 75)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(87, 24)
         Me.Label14.TabIndex = 0
@@ -740,13 +740,13 @@ Partial Class mainForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(884, 461)
+        Me.Controls.Add(Me.aboutPanel)
+        Me.Controls.Add(Me.foodPanel)
+        Me.Controls.Add(Me.cartPanel)
         Me.Controls.Add(Me.dessertPanel)
         Me.Controls.Add(Me.drinkPanel)
-        Me.Controls.Add(Me.foodPanel)
         Me.Controls.Add(Me.panelOnButton)
         Me.Controls.Add(Me.leftPanel)
-        Me.Controls.Add(Me.cartPanel)
-        Me.Controls.Add(Me.aboutPanel)
         Me.Name = "mainForm"
         Me.Text = " "
         Me.leftPanel.ResumeLayout(False)
